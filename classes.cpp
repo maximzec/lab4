@@ -4,6 +4,19 @@
 
 #include "classes.h"
 //Child Class funcs
+
+Child::Child() {
+}
+
+Child::Child(std::string name, std::string last_name, int age) {
+    this->name = name;
+    this->last_name = last_name;
+    this->age = age;
+}
+Child::Child(const Child &object) {}
+
+Child::~Child() = default;
+
 int Child::getAge() {
     return this->age;
 }
@@ -23,12 +36,55 @@ void Child::setName(std::string name) {
     this->name = name;
 }
 
+
+
+
+
+
+
+
+
+
+
 //Tiles Class funcs
+Tiles::Tiles() {}
+
+Tiles::Tiles(std::string brand, int size_h, int size_w, int price) {
+    this->brand = brand;
+    this->size_h = size_h;
+    this->size_w = size_w;
+    this->price = price;
+}
+
+Tiles::Tiles(const Tiles &object) {}
+
+Tiles::~Tiles() = default;
+
 void Tiles::getData() {
     std::cout << "brand: "<< this->brand << ", " << "width: "<< this->size_w << ", " << "height: " << this->size_h << ", " << "price:" <<this->price << std::endl;
 }
 
+
+
+
+
+
+
+
+
+
 //Complex Class funcs
+Complex::Complex() {}
+
+Complex::Complex(double re, double im) {
+    this->re = re;
+    this->im = im;
+}
+
+Complex::Complex(const Complex &object) {}
+
+Complex::~Complex() = default;
+
 void Complex::printComplex() {
     if(this->im >= 0) std::cout << this->re <<"+"<<this->im << "i" << std::endl;
     else std::cout << this->re <<"-"<<this->im << "i" << std::endl;
@@ -43,7 +99,26 @@ void Complex::setData(double re , double im){
     this->im = im;
 }
 
+
+
+
+
+
+
+
+
 //Vector Class funcs
+
+Vector::Vector() {}
+
+Vector::Vector(double x, double y) {
+    this->x = x;
+    this->y = y;
+}
+
+Vector::Vector(const Vector &object) {}
+
+Vector::~Vector() = default;
 void Vector::setValues(double x, double y) {
     this->x = x;
     this->y = y;
