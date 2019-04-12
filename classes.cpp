@@ -13,7 +13,9 @@ Child::Child(std::string name, std::string last_name, int age) {
     this->last_name = last_name;
     this->age = age;
 }
-Child::Child(const Child &object) {}
+Child::Child(const Child &object) : name(object.name) , last_name(object.last_name) , age(object.age){
+	std::cout << "Copied";
+}
 
 Child::~Child() = default;
 
@@ -56,7 +58,9 @@ Tiles::Tiles(std::string brand, int size_h, int size_w, int price) {
     this->price = price;
 }
 
-Tiles::Tiles(const Tiles &object) {}
+Tiles::Tiles(const Tiles &object) : brand(object.brand) , size_h(object.size_h) , size_w(object.size_w) , price(object.price)  {
+	std::cout << "It was copied";
+}
 
 Tiles::~Tiles() = default;
 
@@ -81,7 +85,9 @@ Complex::Complex(double re, double im) {
     this->im = im;
 }
 
-Complex::Complex(const Complex &object) {}
+Complex::Complex(const Complex &object): re(object.re) , im(object.im) {
+	std::cout << "Copied";
+}
 
 Complex::~Complex() = default;
 
@@ -116,7 +122,9 @@ Vector::Vector(double x, double y) {
     this->y = y;
 }
 
-Vector::Vector(const Vector &object) {}
+Vector::Vector(const Vector &object): x(object.x) , y(object.y) {
+	std::cout << "Copied";
+}
 
 Vector::~Vector() = default;
 void Vector::setValues(double x, double y) {
